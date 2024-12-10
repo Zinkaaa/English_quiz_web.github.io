@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="quiz1.css">
+    <title>Reading Quiz</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-flex">
+            <img src="images/logo.png" alt="Quizzy" class="logo" />
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" href="#">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="main-section">
+        <div class="section-header">
+            <div class="path">
+                <p>Home &gt Reading comprehension &gt Operating System &gt <span class="primary-color">Quiz</span></p>
+            </div>
+            <div id="timer" class="timer">
+                <p><span id="minutes">20</span>:<span id="seconds">00</span></p>
+            </div>
+        </div>
+        <div class="header-text">
+            <h2>Operating System Reading Comprehension</h2>
+        </div>
+        <div class="reading-para">
+            <p id="reading-para">
+                Because there are many concurrent processes within a computer system, it is 
+                necessary to have an executive or master control program; such a program is known 
+                as an operating system. The operating system is designed to exercise overall control 
+                of the system, scheduling operations, allocating system resources, preventing 
+                interference between programs and so on. In multiuser environments the operating
+                system is oriented towards timesharing, being responsible for the efficient sharing of 
+                such resources as CPU time, memory space, IO devices, utility programs and so on. 
+                There are also specialized operating systems for computers that require very short 
+                response times (real-time systems) and for wide-area networks (transaction- 
+                processing systems). <br> <br>
+                The basic unit of computing managed by an operating system is a process or task, a 
+                loose definition of which could be a self-contained program module in the course of 
+                execution: for instance, a subroutine being executed by a CPU or an IO program being 
+                executed by an IO processor might be typical examples of processes. The resources 
+                required by a process, such as a processor and memory space, are usually allocated it
+                dynamically during execution. <br><br>
+                Some processes are created in response to user commands to the operating system, 
+                others are created by other processes. While in existence, a process has three major 
+                states: ready, running and blocked. In a ready state a process is waiting, perhaps in a 
+                queue with other processes, for the resources it needs to enter the running state. A 
+                blocked process is waiting for some event to occur, such as completion of some other 
+                process that provides it with necessary data. A transition from one state to another is 
+                triggered by various conditions such as interrupts and user instructions to the 
+                operating system. When no longer needed, a process (but not the underlying 
+                program) can be deleted via the operating system so that any resources currently 
+                allocated to it are released. <br><br>
+                An operating system contains huge amounts of software, as it is made up of a large 
+                number of computer resource management programs such as processor scheduling 
+                routines, virtual memory routines and IO device control programs. Moreover some 
+                commonly used utility programs like programming language translators, text editors
+                etc. are often considered part of the operating system and are invoked via commands 
+                to it. All of this software is far too much to store in main memory in its entirety. As a 
+                result the less frequently used parts of the operating system such as file management 
+                routines and compilers reside in secondary memory, and are only brought into main 
+                memory when needed. The other portion of the operating system consisting of the
+                most frequently used parts remains continuously in main memory and is termed the 
+                kernel. <br><br>
+                The kernel is responsible for creating, deleting and state-switching the many 
+                processes that define the computer's behaviour. It does so by responding to a steady 
+                flow of interrupt requests coming from a variety of sources, such as user-generated
+                requests for operating system services, memory allocation/deallocation requests, IO 
+                operations, etc. It achieves a rapid response by only briefly disabling other interrupts 
+                while responding to the current one, then dispatching or creating an operating system 
+                process to execute the appropriate interrupt-handling routine. The performance and 
+                reliability of the kernel can be improved by implementing some of its more basic
+                functions in the hardware or firmware.</p>
+        </div>
+        <form id="quiz-form">
+            <!--  -->
+        </form>
+        <div class="submit-btn">
+            <button type="button" id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div id="popup-window" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Quiz Results</h2>
+                <p id="popup-message"></p>
+                <button class="popup-button" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <img src="images/logo.png" alt="Lumina Creative">
+
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>962-902-08</li>
+                    <li>mrspotatohead453@gmail.com</li>
+                    <li>Stda, Darkhan, Mongolia</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Created By</h4>
+                <ul>
+                    <li>Tugsjargal Zina</li>
+                    <li>Tumurbaatar Erdenebat</li>
+                    <li>Munkhsugar Munkhbayasgalan</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-tumblr fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Make the questions array global
+        const questions = [
+            {
+                question: "What is the primary function of an operating system?",
+                options: ["To execute user commands", "To manage system resources and processes", "To perform calculations", "To create hardware components"],
+                correctAnswer: "To manage system resources and processes",
+            },
+            {
+                question: "In a multiuser environment, what is the main responsibility of the operating system?",
+                options: ["To ensure that hardware components function correctly", "To prevent users from accessing the same memory", "To efficiently share resources like CPU time and memory", "To generate graphical interfaces"],
+                correctAnswer: "To efficiently share resources like CPU time and memory",
+            },
+            {
+                question: "What is a process in the context of an operating system?",
+                options: ["A user command to the operating system", "A hardware component in the system", "A resource required for running an application", "A self-contained program module in execution"],
+                correctAnswer: "A self-contained program module in execution",
+            },
+            {
+                question: "Which of the following is NOT a state of a process?",
+                options: ["Ready", "Running", "Executed", "Blocked"],
+                correctAnswer: "Executed",
+            },
+            {
+                question: "What is a BLOCKED process waiting for?",
+                options: ["A specific event or data to complete execution", "User commands", "Additional memory space", "CPU time"],
+                correctAnswer: "A specific event or data to complete execution",
+            },
+            {
+                question: "An operating system is responsible for managing system resources, scheduling operations, and preventing interference between programs.",
+                options: ["True", "False"],
+                correctAnswer: "True",
+            },
+            {
+                question: "In multiuser environments, the operating system is primarily responsible for managing hardware components like the CPU and memory.",
+                options: ["True", "False"],
+                correctAnswer: "False",
+            },
+            {
+                question: "A process in an operating system is defined as a self-contained program module that is in execution.",
+                options: ["True", "False"],
+                correctAnswer: "True",
+            },
+            {
+                question: "The kernel of an operating system is responsible for managing processes and responding to interrupts.",
+                options: ["True", "False"],
+                correctAnswer: "True",
+            },
+            {
+                question: "All parts of an operating system, including rarely used routines, are kept in main memory to ensure fast access.",
+                options: ["True", "False"],
+                correctAnswer: "False",
+            },
+        ];
+
+        // Function to start the quiz
+        function startQuiz() {
+            const quizForm = document.getElementById("quiz-form");
+
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    ${q.options
+                        .map(
+                            (option) => `
+                            <input type="radio" id="q${index}-option${option}" name="q${index}" value="${option}">
+                            <label for="q${index}-option${option}">${option}</label><br>
+                        `
+                        )
+                        .join("")}
+                `;
+                quizForm.appendChild(questionDiv);
+            });
+
+            startTimer(); // Start the timer when the quiz starts
+        }
+
+        let timeRemaining = 1200;
+        let timerInterval;
+
+        // Function to start the countdown timer
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById('timer').innerText = `Time remaining: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                timeRemaining--;
+
+                if (timeRemaining < 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz(); // Auto-submit the quiz if the time runs out
+                }
+            }, 1000);
+        }
+
+        // Function to calculate the score and display it in a popup
+        function submitQuiz() {
+            clearInterval(timerInterval); // Stop the timer
+            const quizForm = document.getElementById('quiz-form');
+            const formData = new FormData(quizForm);
+            let score = 0;
+
+            // Calculate the score
+            questions.forEach((q, index) => {
+                const selectedAnswer = formData.get(`q${index}`);
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Display the score in the popup
+            const popupMessage = document.getElementById('popup-message');
+            popupMessage.innerText = `Your score is: ${score} out of ${questions.length}`;
+            document.getElementById('popup-window').style.display = 'flex';
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup-window').style.display = 'none';
+        }
+
+        // Start the quiz when the page loads
+        window.onload = startQuiz;
+    </script>
+</body>
+</html>

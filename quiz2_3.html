@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="quiz1.css">
+    <title>Reading Quiz</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-flex">
+            <img src="images/logo.png" alt="Quizzy" class="logo" />
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" href="#">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="main-section">
+        <div class="section-header">
+            <div class="path">
+                <p>Home &gt Reading comprehension &gt Multiprocessor &gt <span class="primary-color">Quiz</span></p>
+            </div>
+            <div id="timer" class="timer">
+                <p><span id="minutes">20</span>:<span id="seconds">00</span></p>
+            </div>
+        </div>
+        <div class="header-text">
+            <h2>Multiprocessor Reading Comprehension</h2>
+        </div>
+        <div class="reading-para">
+            <p id="reading-para">
+                A multiprocessor is a computer system characterized by the presence of several CPUs 
+                or, more generally, processing elements (PEs), which cooperate on common or shared 
+                computational tasks. Multiprocessors are distinguished from multicomputer systems 
+                and computer networks, which are systems with multiple PEs operating independently 
+                on separate tasks. The various PEs making up a multiprocessor typically share 
+                resources such as communication facilities, input-output devices, program libraries, 
+                databases etc., and are all controlled by a common operating system.  <br> <br>
+
+                The two main reasons for including multiple PEs in a single computer system are to 
+                improve performance and to increase reliability. Performance (i.e. throughput) 
+                improvement is obtained either by allowing many PEs to share the computation load 
+                associated with a single large task, or by allowing many smaller tasks to be performed 
+                in parallel in separate PEs. A multiprocessor composed of n identical processors is an 
+                example of a n-unit processor that can, in principle, provide n times the performance 
+                of a comparable single-unit system or uniprocessor. A major goal in designing n- 
+                processor systems is to obtain a speedup S(n) that is as near to n as possible. System 
+                reliability is improved by the fact that failure of one CPU need not cause the entire 
+                system to fail. The functions of the faulty processor and its local resources can be 
+                taken over by the other processors; consequently multiprocessors allow fault- 
+                tolerance to be incorporated into the system. Of particular interest is the ability of 
+                fault-tolerant multiprocessors to operate correctly at a reduced or degraded 
+                performance level in the presence of hardware or software failures, a property called 
+                graceful degradation. By enabling such facilities as secondary memory units and 
+                system software to be shared efficiently, a multiprocessor architecture can lead to 
+                significant reduction in overall system cost. <br><br>
+
+                Multiprocessors can be classified by the organization of their main-memory systems. 
+                If main memory, or a major portion of main memory, can be directly accessed by all 
+                the PEs of a multiprocessor, the system is termed a shared-memory computer, and 
+                the shared portion of main memory is called global memory. Information can 
+                therefore be shared among the processors simply by placing it in the global memory. 
+                Distributed-memory computers, on the other hand, have no global memory. Instead 
+                each processing element has its own private or local main memory. Distributed 
+                memory systems share information by transmitting it in the form of messages 
+                between the local memories of different processors; such message passing requires a 
+                series of relatively slow input-output operations. Shared-memory and distributed- 
+                memory multiprocessors are also called tightly coupled and loosely coupled, 
+                respectively, reflecting the speed and ease with which they can operate on common 
+                tasks.</p>
+        </div>
+        <form id="quiz-form">
+            <!--  -->
+        </form>
+        <div class="submit-btn">
+            <button type="button" id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div id="popup-window" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Quiz Results</h2>
+                <p id="popup-message"></p>
+                <button class="popup-button" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <img src="images/logo.png" alt="Lumina Creative">
+
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>962-902-08</li>
+                    <li>mrspotatohead453@gmail.com</li>
+                    <li>Stda, Darkhan, Mongolia</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Created By</h4>
+                <ul>
+                    <li>Tugsjargal Zina</li>
+                    <li>Tumurbaatar Erdenebat</li>
+                    <li>Munkhsugar Munkhbayasgalan</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-tumblr fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let timeRemaining = 1200;
+        let timerInterval;
+
+        function startQuiz() {
+            const quizForm = document.getElementById("quiz-form");
+            const questions = [
+                {
+                    question: "What is the primary characteristic of a multiprocessor system?",
+                    options: ["Multiple processors working independently on separate tasks.", "A single processor performing all computations.", "Multiple processors cooperating on shared computational tasks.", "Multiple computers connected via a network."],
+                    correctAnswer: "Multiple processors cooperating on shared computational tasks.",
+                },
+                {
+                    question: "What is one major goal of designing an 𝑛-processor multiprocessor system?",
+                    options: ["To achieve a speedup 𝑆(𝑛) close to 𝑛.", "To achieve a speedup 𝑆(𝑛) close to 1.", "To ensure fault-tolerance at any cost.", "To minimize the number of CPUs."],
+                    correctAnswer: "To achieve a speedup 𝑆(𝑛) close to 𝑛.",
+                },
+                {
+                    question: "What does 'graceful degradation' mean in the context of multiprocessors?",
+                    options: ["The system stops functioning entirely upon failure of one processor.", "The system operates at reduced performance when a fault occurs.", "The system switches to single-processor mode during failure.", "The system replaces hardware instantly without downtime."],
+                    correctAnswer: "The system operates at reduced performance when a fault occurs.",
+                },
+                {
+                    question: "Which of the following best describes a shared-memory computer?",
+                    options: ["Each processor has private memory, and communication is through messages.", "Memory is stored in external devices and accessed via a network.", "Processors are connected loosely and share minimal resources.", "All processors can directly access a common global memory."],
+                    correctAnswer: "All processors can directly access a common global memory.",
+                },
+                {
+                    question: "How do distributed-memory multiprocessors share information?",
+                    options: ["Through global memory.", "By transmitting messages between local memories.", "Using tightly coupled communication protocols.", "By storing shared data in secondary memory."],
+                    correctAnswer: "By transmitting messages between local memories.",
+                },
+                {
+                    question: "Multiprocessors and multicomputer systems are identical in terms of their task execution.",
+                    options: ["True", "False"],
+                    correctAnswer: "False",
+                },
+                {
+                    question: "Fault-tolerant multiprocessors can operate at a reduced performance level in case of hardware or software failures.",
+                    options: ["True", "False"],
+                    correctAnswer: "True",
+                },
+                {
+                    question: "In shared-memory computers, information is shared by placing it in global memory accessible by all processors.",
+                    options: ["True", "False"],
+                    correctAnswer: "True",
+                },
+                {
+                    question: "Distributed-memory multiprocessors require a series of input-output operations to share information.",
+                    options: ["True", "False"],
+                    correctAnswer: "True",
+                },
+                {
+                    question: "Loosely coupled systems, like shared-memory multiprocessors, operate faster than tightly coupled systems.",
+                    options: ["True", "False"],
+                    correctAnswer: "False",
+                },
+            ];
+
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    ${q.options
+                        .map(
+                            (option) => `
+                            <input type="radio" id="q${index}-option${option}" name="q${index}" value="${option}">
+                            <label for="q${index}-option${option}">${option}</label><br>
+                        `
+                        )
+                        .join("")}
+                `;
+                quizForm.appendChild(questionDiv);
+            });
+
+            startTimer(); // Start the timer when the quiz starts
+        }
+
+        // Function to start the countdown timer
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById('timer').innerText = `Time remaining: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                timeRemaining--;
+
+                if (timeRemaining < 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz(); // Auto-submit the quiz if the time runs out
+                }
+            }, 1000);
+        }
+
+        // Function to calculate the score and display it in a popup
+        function submitQuiz() {
+            clearInterval(timerInterval); // Stop the timer
+            const quizForm = document.getElementById('quiz-form');
+            const formData = new FormData(quizForm);
+            let score = 0;
+
+            // Calculate the score
+            questions.forEach((q, index) => {
+                const selectedAnswer = formData.get(`q${index}`);
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Display the score in the popup
+            const popupMessage = document.getElementById('popup-message');
+            popupMessage.innerText = `Your score is: ${score} out of ${questions.length}`;
+            document.getElementById('popup-window').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-window').style.display = 'none';
+        }
+
+        // Start the quiz when the page loads
+        window.onload = startQuiz;
+
+    </script>
+</body>
+</html>

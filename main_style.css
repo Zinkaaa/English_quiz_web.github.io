@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #308c74;
+    --primary-dark-color: #276251;
+    --primary-light-color: #59a390;
+    --primary-font: 16px;
+    --primary-dark-mode: #383434;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.header-flex {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(128,119,128,0.67);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(128,119,128,0.67);
+    box-shadow: 0px 3px 5px 0px rgba(128,119,128,0.67);
+    position: sticky;
+}
+
+.header-flex .logo {
+    width: 150px;
+}
+
+.header-flex .main-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.main-menu li {
+    list-style-type: none;
+}
+
+.main-menu .current {
+    background-color: var(--primary-color);
+    font-weight: 500;
+    color: white;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.main-menu li a:hover {
+    background-color: var(--primary-color);
+    font-weight: 500;
+    color: white;
+}
+
+.footer {
+    border-top: 2px solid #ccc;
+    padding: 20px;
+    width: 100%; /* footer-ийн өргөн бүхий л дэлгэцтэй тэнцүү байх */
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* ширээний хэмжээний эгнээнд орно */
+    max-width: 1200px; /* Макс өргөн тохируулах (шинжилгээнд тохируулж болно) */
+    margin: 0 auto; /* Өргөн нь дэлгэцийн төвд байрлана */
+}
+
+.footer-flex img {
+    width: 150px;
+}
+
+.footer-flex h4 {
+    margin-bottom: 10px;
+}
+
+.footer-flex li {
+    list-style-type: none;
+}
+
+.footer-flex i {
+    color: var(--primary-dark-color);
+}
+
+.footer-flex a {
+    margin-left: 5px;
+}
+
+@media (max-width: 1024px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+}

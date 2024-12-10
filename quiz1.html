@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="quiz1.css">
+    <title>Vocabulary Quiz</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-flex">
+            <img src="images/logo.png" alt="Quizzy" class="logo" />
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" href="#">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="main-section">
+        <div class="section-header">
+            <div class="path">
+                <p>Home &gt Vocabulary &gt <span id="page-name"></span> &gt   <span class="primary-color">Quiz</span></p>
+            </div>
+            <div id="timer" class="timer">
+                <p><span id="minutes">10</span>:<span id="seconds">00</span></p>
+            </div>
+        </div>
+        <div class="header-text">
+            <h2><span id="page-name2"></span> Vocabulary Quiz</h2>
+        </div>
+        <form id="quiz-form">
+            <!-- 10 questions will be dynamically inserted here based on the selected topic -->
+        </form>
+        <div class="submit-btn">
+            <button type="button" id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div id="popup-window" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Quiz Results</h2>
+                <p id="popup-message"></p>
+                <button class="popup-button" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <img src="images/logo.png" alt="Lumina Creative">
+
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>962-902-08</li>
+                    <li>mrspotatohead453@gmail.com</li>
+                    <li>Stda, Darkhan, Mongolia</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Created By</h4>
+                <ul>
+                    <li>Tugsjargal Zina</li>
+                    <li>Tumurbaatar Erdenebat</li>
+                    <li>Munkhsugar Munkhbayasgalan</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-tumblr fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="quiz_voc.js"></script>
+</body>
+</html>

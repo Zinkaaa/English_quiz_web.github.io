@@ -1,0 +1,63 @@
+:root {
+    --primary-color: #308c74;
+    --primary-dark-color: #276251;
+    --primary-light-color: #59a390;
+    --primary-font: 16px;
+    --primary-dark-mode: #383434;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.bg-dark{
+    background-color: var(--primary-dark-color);
+    color: white;
+}
+
+.team {
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-heading {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.team-flex {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.team-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.team-item p {
+    text-align: justify;
+}
+
+@media (max-width: 1024px) {
+    .team-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        margin: 50px;
+    }
+    
+}

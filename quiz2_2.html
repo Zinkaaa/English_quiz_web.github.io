@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="quiz1.css">
+    <title>Reading Quiz</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-flex">
+            <img src="images/logo.png" alt="Quizzy" class="logo" />
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="current" href="#">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="main-section">
+        <div class="section-header">
+            <div class="path">
+                <p>Home &gt Reading comprehension &gt Networks &gt <span class="primary-color">Quiz</span></p>
+            </div>
+            <div id="timer" class="timer">
+                <p><span id="minutes">20</span>:<span id="seconds">00</span></p>
+            </div>
+        </div>
+        <div class="header-text">
+            <h2>Networks Reading Comprehension</h2>
+        </div>
+        <div class="reading-para">
+            <p id="reading-para">
+                There are many kinds of computer networks. A major distinction can be made 
+                between terminal-based networks and computer-based networks. Terminal-based 
+                networks are characterized by the presence of a centralized computer that 
+                communicates with a large number of remote terminals. The terminals can range from 
+                general-purpose terminals with keyboard and screen to highly specialized devices.
+                They perform two main functions: local data processing tasks and the processing 
+                needed to communicate with the central computer. An example of a terminal-based 
+                network is found in a large department store where many points-of-sale are linked to 
+                a central computer. Terminal-based systems with thousands of terminals can also be 
+                found, for example, computer networks used for airline reservations. One of the 
+                earliest computer networks was the American Airlines SABRE (Sales and Business 
+                Reservations done Electronically) reservation system built in the 1960s. This 
+                prototype of all subsequent reservation systems linked over a thousand terminals 
+                scattered throughout the United States to a central computer system maintaining all 
+                the airline's flight information. <br> <br>
+                Computer-based networks, on the other hand, are characterized by the presence of 
+                multiple distributed computers with decentralized control. This type of network is used 
+                extensively for the transmission of files, including e-mail messages, among users of 
+                different computers on the network. Where communication distances less than a few 
+                kilometres are involved, for instance, a computer network within a single building or
+                university campus, the term local area network (LAN) is used. LANs often employ 
+                data-transmission links (electrical or optical cables) that are private to the network in 
+                question. For computer networks spread over large geographical areas, sometimes 
+                termed wide-area networks (WANs), the data-transmission facilities are typically 
+                supplied by communications companies called common-carriers, which in many 
+                countries are government-owned or -regulated organizations. The various national 
+                and international telephone networks are extensively used for both local and long- 
+                distance computer communications, but they are increasingly being supplemented by 
+                networks designed specifically for digital data transmission. Like the telephone 
+                networks, these public data networks are composed of a heterogeneous mixture of 
+                electrical, optical and microwave links.  <br><br>
+                Communications costs are major contributors to the total cost of using a wide-area 
+                computer network. There are various techniques for sharing the long-distance 
+                communication links to reduce these costs. The establishment of a dedicated 
+                communication path from source to destination for each information exchange is 
+                called circuit or line switching. It is the usual mode of communication used in the 
+                public telephone network. Circuit switching is established by dialling and implemented 
+                by telephone exchanges. It has the disadvantage that once a path is established 
+                between two locations, it cannot be used by other potential users along the path, 
+                even if the utilization of that path is very low.<br><br>
+                The problem can be overcome by a technique called message switching, whereby 
+                intermediate switching centres on a long communication path are used to store data 
+                and subsequently forward it to the next destination, a process called store-and- 
+                forward. Messages are collected at each switching centre where they are organized in 
+                a manner that makes efficient use of the data paths connected to that centre.
+                Compared with circuit switching, message switching can provide a substantial 
+                increase in communication link utilization.
+        </div>
+        <form id="quiz-form">
+            <!--  -->
+        </form>
+        <div class="submit-btn">
+            <button type="button" id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <div id="popup-window" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Quiz Results</h2>
+                <p id="popup-message"></p>
+                <button class="popup-button" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <img src="images/logo.png" alt="Lumina Creative">
+
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>962-902-08</li>
+                    <li>mrspotatohead453@gmail.com</li>
+                    <li>Stda, Darkhan, Mongolia</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Created By</h4>
+                <ul>
+                    <li>Tugsjargal Zina</li>
+                    <li>Tumurbaatar Erdenebat</li>
+                    <li>Munkhsugar Munkhbayasgalan</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-tumblr fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let timeRemaining = 1200;
+        let timerInterval;
+
+        function startQuiz() {
+            const quizForm = document.getElementById("quiz-form");
+            const questions = [
+                {
+                    question: "Which of the following best describes a terminal-based network?",
+                    options: ["It involves multiple decentralized computers with no central control.", "It uses a centralized computer that communicates with multiple remote terminals.", "It involves sending files and emails between users on different computers.", "It is used for long-distance communication between multiple buildings."],
+                    correctAnswer: "It uses a centralized computer that communicates with multiple remote terminals.",
+                },
+                {
+                    question: "What is an example of a terminal-based network mentioned in the text?",
+                    options: ["The SABRE reservation system for American Airlines.", "A computer network used for e-mail communication.", " A LAN within a university campus.", "A wide-area network (WAN) used for file transmission."],
+                    correctAnswer: "The SABRE reservation system for American Airlines.",
+                },
+                {
+                    question: "Which term is used for a network within a single building or university campus?",
+                    options: ["Wide-Area Network (WAN)", "Local Area Network (LAN)", "Circuit-switched network", "Terminal-based network"],
+                    correctAnswer: "Local Area Network (LAN)",
+                },
+                {
+                    question: "What is the major disadvantage of circuit switching?",
+                    options: ["It requires more bandwidth than necessary.", "It is not suitable for long-distance communication.", "It is slower than message switching.", "Once a communication path is established, it cannot be shared with other users."],
+                    correctAnswer: "Once a communication path is established, it cannot be shared with other users.",
+                },
+                {
+                    question: "What technique does message switching use to forward data?",
+                    options: ["It establishes a dedicated communication path for each exchange.", "It forwards data directly to the destination without storing it.", "It stores data at intermediate switching centers and forwards it later.", "It divides data into packets and sends them simultaneously."],
+                    correctAnswer: "It stores data at intermediate switching centers and forwards it later.",
+                },
+                {
+                    question: "Terminal-based networks only use general-purpose terminals and not specialized devices.",
+                    options: ["True", "False"],
+                    correctAnswer: "False",
+                },
+                {
+                    question: "A wide-area network (WAN) covers a large geographical area and typically uses public communication facilities.",
+                    options: ["True", "False"],
+                    correctAnswer: "True",
+                },
+                {
+                    question: "The SABRE reservation system is a modern network used for booking airline tickets.",
+                    options: ["True", "False"],
+                    correctAnswer: "False",
+                },
+                {
+                    question: "Message switching allows multiple users to share the communication path efficiently.",
+                    options: ["True", "False"],
+                    correctAnswer: "True",
+                },
+                {
+                    question: "Circuit switching is more efficient than message switching for long-distance communication.",
+                    options: ["True", "False"],
+                    correctAnswer: "False",
+                },
+            ];
+
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${q.question}</p>
+                    ${q.options
+                        .map(
+                            (option) => `
+                            <input type="radio" id="q${index}-option${option}" name="q${index}" value="${option}">
+                            <label for="q${index}-option${option}">${option}</label><br>
+                        `
+                        )
+                        .join("")}
+                `;
+                quizForm.appendChild(questionDiv);
+            });
+
+            startTimer(); // Start the timer when the quiz starts
+        }
+
+        // Function to start the countdown timer
+        function startTimer() {
+            timerInterval = setInterval(function () {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById('timer').innerText = `Time remaining: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                timeRemaining--;
+
+                if (timeRemaining < 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz(); // Auto-submit the quiz if the time runs out
+                }
+            }, 1000);
+        }
+
+        // Function to calculate the score and display it in a popup
+        function submitQuiz() {
+            clearInterval(timerInterval); // Stop the timer
+            const quizForm = document.getElementById('quiz-form');
+            const formData = new FormData(quizForm);
+            let score = 0;
+
+            // Calculate the score
+            questions.forEach((q, index) => {
+                const selectedAnswer = formData.get(`q${index}`);
+                if (selectedAnswer === q.correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Display the score in the popup
+            const popupMessage = document.getElementById('popup-message');
+            popupMessage.innerText = `Your score is: ${score} out of ${questions.length}`;
+            document.getElementById('popup-window').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-window').style.display = 'none';
+        }
+
+        // Start the quiz when the page loads
+        window.onload = startQuiz;
+
+    </script>
+</body>
+</html>
