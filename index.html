@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main_style.css">
+    <title>Quiz Web</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-flex">
+            <img src="images/logo.png" alt="Quizzy" class="logo" />
+            <ul class="main-menu">
+                <li><a class="current" href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>
+                <span class="bg-primary">Get ready</span> to test your skills and sharpen your mind as we 
+                dive into an exciting journey through the world of <span class="bg-primary">English.</span>
+            </h2>
+            <p><b>Welcome to the Computing English Quiz!</b><br>
+            "Are you ready to decode the language of technology? This quiz blends English language skills 
+            with computing concepts, helping you sharpen your vocabulary, comprehension, and grammar while 
+            exploring the digital world. Whether you're a tech enthusiast or just getting started, this is 
+            your chance to test your knowledge and level up. Let's begin!"</p>
+
+            <button class="quiz-button" onclick="openPopup()">Take a quiz</button>
+
+            <!-- Popup Modal -->
+            <div id="popup" class="popup hidden">
+                <div class="popup-content">
+                    <span class="close-icon" onclick="closePopup()">&times;</span>
+                    <h2>Before You Start the Quiz</h2>
+                    <ul class="guidelines">
+                        <li>Ensure a stable internet connection.</li>
+                        <li>Read each question carefully before answering.</li>
+                        <li>Do not refresh or close the browser during the quiz.</li>
+                        <li>Manage your time wisely; some quizzes may be timed.</li>
+                        <li>Make sure you are in a quiet environment for better focus.</li>
+                        <li>Double-check your answers before submitting.</li>
+                    </ul>
+                    <div id="form-box">
+                        <form id="test-form">
+                            <select id="language" onchange="showAdditionalOptions()">
+                                <option value="vocabulary" selected="selected">VOCABULARY</option>
+                                <option value="reading">READING</option>
+                                <option value="listening">LISTENING</option>
+                            </select>
+
+                            <div id="additional-options">
+                                <select id="vocabulary-options" class="quiz-select" style="display:block;">
+                                    <option value="computing">Basic Computing</option>
+                                    <option value="networking">Networking</option>
+                                    <option value="robotic">Robotic</option>
+                                    <option value="programming">Programming</option>
+                                    <option value="database">Database</option>
+                                </select>
+                            
+
+                                <select id="reading-options" class="quiz-select" style="display:none;">
+                                    <option value="reading1">Reading 1</option>
+                                    <option value="reading2">Reading 2</option>
+                                    <option value="reading3">Reading 3</option>
+                                </select>
+                            
+
+                                <select id="listening-options" class="quiz-select" style="display:none;">
+                                    <option value="computers">Computers</option>
+                                    <option value="cyber-bullying">Cyber Bullying</option>
+                                    <option value="cyber-crime">Cyber Crime</option>
+                                    <option value="internet">Internet</option>
+                                    <option value="junk-mail">Junk Mail</option>
+                                    <option value="microsoft">Microsoft</option>
+                                    <option value="robots">Robots</option>
+                                    <option value="social-networking">Social Networking</option>
+                                </select>
+                            </div>                            
+
+                            <button type="button" id="choose-lang" onclick="startQuiz()">Start a test</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/take_a_quiz.webp" alt="Take a quiz" class="profile-img">
+        </div>  
+    </section>
+
+    <section class="quiz-topics">
+        <div class="section-header">
+            <h2>
+                <span>Quiz topics</span>
+            </h2>
+        </div>
+
+        <ul class="topic-items">
+            <li>
+                <img src="images/computer.png" alt="">
+                <p>Information System</p>
+            </li>
+            <li>
+                <img src="images/network.png" alt="">
+                <p>Networking</p>
+            </li>
+            <li>
+                <img src="images/robot.png" alt="">
+                <p>Robotic</p>
+            </li>
+            <li>
+                <img src="images/code.png" alt="">
+                <p>Programming</p>
+            </li>
+            <li>
+                <img src="images/database-storage.png" alt="">
+                <p>Database</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <img src="images/logo.png" alt="Lumina Creative">
+
+            <div>
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>962-902-08</li>
+                    <li>mrspotatohead453@gmail.com</li>
+                    <li>Stda, Darkhan, Mongolia</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Created By</h4>
+                <ul>
+                    <li>Tugsjargal Zina</li>
+                    <li>Tumurbaatar Erdenebat</li>
+                    <li>Munkhsugar Munkhbayasgalan</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-tumblr fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Open Popup
+        function openPopup() {
+            document.getElementById('popup').classList.remove('hidden');
+        }
+
+        // Close Popup
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+
+        // Update options based on selected quiz type
+        function showAdditionalOptions() {
+            var selectedLanguage = document.getElementById('language').value;
+
+            // Hide all extra options first
+            document.getElementById('vocabulary-options').style.display = 'none';
+            document.getElementById('reading-options').style.display = 'none';
+            document.getElementById('listening-options').style.display = 'none';
+
+            // Show the appropriate options
+            if (selectedLanguage === 'vocabulary') {
+                document.getElementById('vocabulary-options').style.display = 'block';
+            } else if (selectedLanguage === 'reading') {
+                document.getElementById('reading-options').style.display = 'block';
+            } else if (selectedLanguage === 'listening') {
+                document.getElementById('listening-options').style.display = 'block';
+            }
+        }
+
+        // Start Quiz
+        function startQuiz() {
+            var selectedQuiz = document.getElementById('language').value;
+            var selectedTopic = '';
+
+            // Get the selected topic based on the quiz type
+            if (selectedQuiz === 'vocabulary') {
+                selectedTopic = document.getElementById('vocabulary-options').value;
+            } else if (selectedQuiz === 'reading') {
+                selectedTopic = document.getElementById('reading-options').value;
+            } else if (selectedQuiz === 'listening') {
+                selectedTopic = document.getElementById('listening-options').value;
+            }
+
+            // Store the selected topic in localStorage
+            localStorage.setItem('selected-topic', selectedTopic);
+
+            // Redirect based on the selected quiz and topic
+            if (selectedQuiz === 'vocabulary') {
+                window.location.href = "quiz1.html";
+            } else if (selectedQuiz === 'reading') {
+                // Check the selected reading topic and redirect accordingly
+                if (selectedTopic === 'reading1') {
+                    window.location.href = "quiz2_1.html"; // Redirect to quiz2_1 for reading1
+                } else if (selectedTopic === 'reading2') {
+                    window.location.href = "quiz2_2.html"; // Redirect to quiz2_2 for reading2
+                } else if (selectedTopic === 'reading3') {
+                    window.location.href = "quiz2_3.html"; // Redirect to quiz2_3 for reading3
+                }
+            } else if (selectedQuiz === 'listening') {
+                window.location.href = "quiz3.html";
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
